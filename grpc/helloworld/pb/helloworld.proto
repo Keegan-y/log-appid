@@ -1,0 +1,24 @@
+syntax = "proto3"; // 版本声明，使用Protocol Buffers v3版本
+
+package pb; // 包名
+
+
+// 定义一个打招呼服务
+service Greeter {//函数 招呼===>说黑楼（hello请求）returns(hello)
+    // SayHello 方法
+    rpc SayHello (HelloRequest) returns (HelloReply) {}//Reply回复
+    // Sends another greeting
+    rpc SayHelloAgain (HelloRequest) returns (HelloReply) {}
+}
+/*
+app信息===》要块高（块高亲求）returns(块高回复)
+*/
+// 包含人名的一个请求消息   块高请求
+message HelloRequest {//结构体
+    string name = 1;
+}
+
+// 包含问候语的响应消息   块高回复
+message HelloReply {
+    string message = 1;
+}
